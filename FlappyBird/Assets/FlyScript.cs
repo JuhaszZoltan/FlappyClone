@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FlyScript : MonoBehaviour
 {
+    public GameManager gameManager; 
+    
     public float velocity = 1;
     public float rotationSmooth = 5;
 
@@ -29,5 +31,10 @@ public class FlyScript : MonoBehaviour
             transform.rotation,
             downRot,
             rotationSmooth * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        gameManager.GameOver();
     }
 }

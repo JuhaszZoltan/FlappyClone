@@ -5,16 +5,9 @@ using UnityEngine;
 public class spawnPipe : MonoBehaviour
 {
     public float maxTime = 2.5F;
-    float timer = 0;
+    float timer = 2;
     public GameObject pipe;
     public float height = 2;
-
-    void Start()
-    {
-        GameObject newPipe = Instantiate(pipe);
-        newPipe.transform.position = transform.position + new Vector3(0, Random.Range(-height, height), 0);
-        Destroy(newPipe, 15);
-    }
 
     void Update()
     {
@@ -26,10 +19,5 @@ public class spawnPipe : MonoBehaviour
             timer = 0;
         }
         timer += Time.deltaTime;
-    }
-
-    void SpawnPipe()
-    {
-        
     }
 }
